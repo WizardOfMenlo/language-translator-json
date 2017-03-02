@@ -7,18 +7,22 @@ import java.util.stream.Stream;
  */
 public class Check
 {
-    public Check(String name, GrammaticalType[] appliesTo, LanguageType applyTo, String regex)
+    public Check(String name, GrammaticalType[] appliesToGT, NumberType[] appliesToNumber, GenderType[] appliesToGender, LanguageType applyToLang, String regex)
     {
         this.name = name;
-        this.appliesTo = appliesTo;
-        this.applyTo = applyTo;
+        this.appliesToType = appliesToGT;
+        this.appliesToGender = appliesToGender;
+        this.appliesToNumber = appliesToNumber;
+        this.applyToLanguage = applyToLang;
         regexChecker = regex;
     }
 
     private String name;
 
-    private GrammaticalType[] appliesTo;
-    private LanguageType applyTo;
+    private GrammaticalType[] appliesToType;
+    private NumberType[] appliesToNumber;
+    private GenderType[] appliesToGender;
+    private LanguageType applyToLanguage;
 
     private String regexChecker;
 
@@ -31,10 +35,12 @@ public class Check
 
     public boolean check(Word wd)
     {
-        if (Stream.of(appliesTo).filter(t -> t == wd.getType()).count() == 0) { return false; }
+        if (Stream.of(appliesToType).filter(t -> t == wd.getType()).count() == 0) { return false; }
+        else if (Stream.of(appliesToGender).filter(t -> t == wd.getGender()).count() == 0) { return false; }
+        else if (Stream.of(appliesToNumber).filter(t -> t == wd.getNumber()).count() == 0) { return false; }
         else
         {
-            switch (applyTo)
+            switch (applyToLanguage)
             {
                 case ORIGINAl:
                     return check(wd.getOriginal());

@@ -61,6 +61,8 @@ public class Word
     }
 
     public GrammaticalType getType() { return type_; }
+    public GenderType getGender() { return gender_; }
+    public NumberType getNumber() { return number_; }
 
     private String original_;
     private String translated_;
