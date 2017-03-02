@@ -18,7 +18,7 @@ public class Dictionary
     {
         // TODO
         // Get the singular of a word
-        String singular = rm.getSingleRuleByName("makeSingular").apply(word, rm);
+        String singular = rm.getSingleRuleByName("makeSingular").apply(word);
 
         try (Stream<String> ss = Files.lines(path_))
         {
