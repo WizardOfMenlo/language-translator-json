@@ -1,7 +1,7 @@
 /**
  * Created by gf45 on 01/03/17.
  */
-public class SingleRule
+public class SingleRule implements IValidable
 {
 
     public SingleRule(String name, String[] checks, ReplacementRegex rregex, LanguageType applyTo)
@@ -67,5 +67,11 @@ public class SingleRule
             return w;
         }
 
+    }
+
+    @Override
+    public boolean valid()
+    {
+        return !name.trim().equals("") && checks.length > 0 && replacementRegex != null;
     }
 }

@@ -1,7 +1,7 @@
 /**
  * Created by gf45 on 02/03/17.
  */
-public class MultipleRule
+public class MultipleRule implements IValidable
 {
     private String name;
     public String getName() { return name; }
@@ -81,5 +81,15 @@ public class MultipleRule
         }
 
         return ret;
+    }
+
+    @Override
+    public boolean valid()
+    {
+        return clause.valid() &&
+                !name.trim().equals("") &&
+                replacements.length > 0 &&
+                replacements.length == rearrangements.length
+                && rearrangements.length == clause.getSize();
     }
 }
