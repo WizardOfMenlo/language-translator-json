@@ -1,7 +1,7 @@
 /**
  * Created by gf45 on 02/03/17.
  */
-public class Clause
+public class Clause implements IValidable
 {
     public Clause(String[][] checks)
     {
@@ -43,5 +43,13 @@ public class Clause
             matches = matches && rm.getCheck(check).check(toCheck);
         }
         return matches;
+    }
+
+    public int getSize() { return checks.length; }
+
+    @Override
+    public boolean valid()
+    {
+        return checks.length > 0;
     }
 }

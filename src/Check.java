@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 /**
  * Created by gf45 on 01/03/17.
  */
-public class Check
+public class Check implements IValidable
 {
     public Check(String name, GrammaticalType[] appliesToGT, NumberType[] appliesToNumber, GenderType[] appliesToGender, LanguageType applyToLang, String regex)
     {
@@ -54,5 +54,11 @@ public class Check
     public String getName()
     {
         return name;
+    }
+
+    @Override
+    public boolean valid()
+    {
+        return !name.equals("") && appliesToType.length > 0 && appliesToGender.length > 0 && appliesToNumber.length > 0;
     }
 }

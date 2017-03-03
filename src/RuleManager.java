@@ -1,7 +1,7 @@
 /**
  * Created by gf45 on 01/03/17.
  */
-public class RuleManager
+public class RuleManager implements IValidable
 {
     private Check[] checks;
     private SingleRule[] srules;
@@ -88,5 +88,26 @@ public class RuleManager
     public void setOrderOfOperation(String[] orderOfOperation)
     {
         this.orderOfOperation = orderOfOperation;
+    }
+
+    @Override
+    public boolean valid()
+    {
+        for (Check c : checks)
+        {
+            if (!c.valid()) return false;
+        }
+
+        for (SingleRule r : srules)
+        {
+            if (!r.valid()) return false;
+        }
+
+        for (MultipleRule m : mrules)
+        {
+            if (!m.valid()) return false;
+        }
+
+        return true;
     }
 }
