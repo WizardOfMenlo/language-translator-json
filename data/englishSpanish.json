@@ -1,45 +1,291 @@
 {
-  "checks": [{
-    "name": "plural",
-    "appliesToType": ["ADJECTIVE"],
-    "appliesToNumber": ["PLURAL"],
-    "appliesToGender": ["MALE", "FEMALE"],
-    "applyToLanguage": "ORIGINAl",
-    "regexChecker": "fafad"
-  }, {
-    "name": "feminine",
-    "appliesToType": ["ADJECTIVE"],
-    "appliesToNumber": ["SINGULAR", "PLURAL"],
-    "appliesToGender": ["FEMALE"],
-    "applyToLanguage": "ORIGINAl",
-    "regexChecker": "fafad"
-  }],
-  "srules": [{
-    "name": "makeSingular",
-    "checks": ["plural"],
-    "replacementRegex": {
-      "regex": "a",
-      "replacement": "b",
-      "replacementGender": "MALE",
-      "replacementNumber": "PLURAL"
+  "checks": [
+    {
+      "name": "plural",
+      "appliesToType": [
+        "ADJECTIVE"
+      ],
+      "appliesToNumber": [
+        "PLURAL"
+      ],
+      "appliesToGender": [
+        "MALE",
+        "FEMALE"
+      ],
+      "applyToLanguage": "ORIGINAl",
+      "regexChecker": "([a-z])\\w+[s]\b"
     },
-    "applyTo": "TRANSLATED"
-  }],
-  "mrules": [{
-    "name": "checkSomething",
-    "clause": {
+    {
+      "name": "singular",
+      "appliesToType": [
+        "NOUN"
+      ],
+      "appliesToNumber": [
+        "PLURAL","SINGULAR"
+      ],
+      "appliesToGender": [
+        "MALE",
+        "FEMALE"
+      ],
+      "applyToLanguage": "ORIGINAl",
+      "regexChecker": "([a-z])\\w+[^s]\b"
+    },
+    {
+      "name": "male",
+      "appliesToType": [
+        "NOUN"
+      ],
+      "appliesToNumber": [
+        "PLURAL", "SINGULAR"
+      ],
+      "appliesToGender": [
+        "MALE",
+        "FEMALE"
+      ],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "([a-z])\\w+[^a,d,z,ión]\b"
+    },
+
+    {
+      "name": "feminineNoun",
+      "appliesToType": [
+        "NOUN"
+      ],
+      "appliesToNumber": [
+        "SINGULAR",
+        "PLURAL"
+      ],
+      "appliesToGender": [
+        "FEMALE"
+      ],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "([a-z])\\w+[a,d,z,ión]\b"
+    },
+    {
+      "name": "pluralVowel",
+      "appliesToType": [
+        "NOUN"
+      ],
+      "appliesToNumber": [
+        "PLURAL"
+      ],
+      "appliesToGender": [
+        "FEMALE", "MALE"
+      ],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "[aeiou]\b"
+    },
+    {
+      "name": "pluralNoVowel",
+      "appliesToType": [
+        "NOUN"
+      ],
+      "appliesToNumber": [
+        "PLURAL"
+      ],
+      "appliesToGender": [
+        "FEMALE", "MALE"
+      ],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "[^aeiou]\b"
+    },
+
+    {
+      "name": "feminineAdjective",
+      "appliesToType": [
+        "ADJECTIVE"
+      ],
+      "appliesToNumber": [
+        "SINGULAR",
+        "PLURAL"
+      ],
+      "appliesToGender": [
+        "FEMALE"
+      ],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "."
+    },
+    {
+      "name": "articleGenderThe",
+      "appliesToType": ["ARTICLE"],
+      "appliesToNumber": [
+        "SINGULAR"
+        ],
+      "appliesToGender": ["FEMALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "el"
+    },
+    {
+      "name": "articleGenderA",
+      "appliesToType": ["ARTICLE"],
+      "appliesToNumber": [
+        "SINGULAR"
+        ],
+      "appliesToGender": ["FEMALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "un"
+    },
+    {
+      "name": "articleGenderThePluralM",
+      "appliesToType": ["ARTICLE"],
+      "appliesToNumber": [
+        "PLURAL"
+        ],
+      "appliesToGender": ["MALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "."
+    },
+    {
+      "name": "articleGenderThePluralF",
+      "appliesToType": ["ARTICLE"],
+      "appliesToNumber": [
+        "PLURAL"
+      ],
+      "appliesToGender": ["FEMALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "."
+    }
+
+  ],
+
+  "srules": [
+    {
+      "name": "makeSingular",
       "checks": [
-        ["plural", "feminine"]
-      ]
+        "plural"
+      ],
+      "replacementRegex": {
+        "regex": "s\b",
+        "replacement": "",
+        "replacementGender": "UNCHANGED",
+        "replacementNumber": "SINGULAR"
+      },
+
+      "applyTo": "TRANSLATED"
     },
-    "replacements": [{
-      "regex": "c",
-      "replacement": "d",
+    {
+    "name": "genderFormatter",
+    "checks":[
+    "feminineAdjective"
+    ],
+    "replacementRegex":{
+    "regex": "o\b",
+    "replacement":"a",
       "replacementGender": "FEMALE",
-      "replacementNumber": "PLURAL"
-    }],
-    "applyTo": "ORIGINAl",
-    "rearrangements": [0]
-  }],
-  "orderOfOperation": ["makeSingular", "checkSomething"]
+      "replacementNumber": "UNCHANGED"
+    },
+      "applyTo": "TRANSLATED"
+    },
+    {
+      "name": "articleTheSingular",
+      "checks":[
+        "articleGenderThe"
+      ],
+      "replacementRegex":{
+        "regex": "el\b",
+        "replacement": "la",
+        "replacementGender": "FEMALE",
+        "replacementNumber": "UNCHANGED"
+      },
+
+      "applyTo": "TRANSLATED"
+    },
+    {
+      "name": "articleA",
+      "checks":[
+        "articleGenderA"
+      ],
+      "replacementRegex":{
+        "regex": "un\b",
+        "replacement": "una",
+        "replacementGender": "FEMALE",
+        "replacementNumber": "UNCHANGED"
+      },
+
+      "applyTo": "TRANSLATED"
+    },
+    {
+      "name": "articleThePluralM",
+      "checks": ["articleGenderThePluralM"],
+      "replacementRegex":{
+        "regex": "el\b",
+        "Replacement": "los",
+        "replacementGender": "MALE",
+        "replacementNumber": "PLURAL"
+      },
+
+      "applyTo": "TRANSLATED"
+    },
+    {
+      "name": "articleThePluralF",
+      "checks": ["articleGenderThePluralF"],
+      "replacementRegex":{
+        "regex": "el\b",
+        "Replacement": "las",
+        "replacementGender": "FEMALE",
+        "replacementNumber": "PLURAL"
+      },
+
+      "applyTo": "TRANSLATED"
+    },
+    {
+      "name": "pluralAdjectiveVowel",
+      "checks": ["pluralVowel"],
+      "replacementRegex":{
+        "regex": "\\W(\b)",
+        "replacementRegex": "s",
+        "replacementGender": "UNCHANGED",
+        "replacementNumber": "PLURAL"
+      },
+
+      "applyTo": "TRANSLATED"
+    },
+    {
+      "name": "pluralAdjectiveNoVowel",
+      "checks": ["pluralNoVowel"],
+      "replacementRegex":{
+        "regex": "\\W(\b)",
+        "replacementRegex": "es",
+        "replacementGender": "UNCHANGED",
+        "replacementNumber": "PLURAL"
+      },
+
+      "applyTo": "TRANSLATED"
+    }
+
+  ],
+  "mrules": [
+    {
+      "name": "checkSomething",
+      "clause": {
+        "checks": [
+          [
+            "plural",
+            "feminine"
+          ]
+        ]
+      },
+      "replacements": [
+        {
+          "regex": "c",
+          "replacement": "d"
+        }
+      ],
+      "applyTo": "ORIGINAl",
+      "rearrangements": [
+        0
+      ]
+    }
+  ],
+  "orderOfOperation": [
+    "genderFormatter",
+    "articleTheSingular",
+    "articleA",
+    "articleThePluralM",
+    "articleThePluralF",
+    "pluralAdjectiveVowel",
+    "pluralAdjectiveNoVowel",
+    "checkSomething"
+
+  ]
 }
