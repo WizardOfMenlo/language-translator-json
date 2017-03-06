@@ -52,7 +52,9 @@ public class Main
             // Get the words from the dictionary (only nouns will have both correct gender and number)
             Word[] words = Stream.of(arr).map(w -> dictionary.getWord(w, rm)).toArray(Word[]::new);
             // Apply all the rules
-            rm.applyAllRules(words);
+            Word[] finalRes = rm.applyAllRules(words);
+            for (Word w : finalRes) { System.out.print(w.getTranslated() + " "); }
+            System.out.println();
         }
     }
 

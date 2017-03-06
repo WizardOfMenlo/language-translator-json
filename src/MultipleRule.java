@@ -28,6 +28,12 @@ public class MultipleRule implements IValidable
         Word[] matches = clause.getMatching(arr, rm);
         // If no matches nothing to be done
         if (matches == null) { return arr; }
+        boolean nullable = true;
+        for (Word w : matches) { if (w != null) { nullable = false; break; } }
+        if (nullable)
+        {
+            return arr;
+        }
 
         // This will be returned
         Word[] ret = new Word[arr.length];
