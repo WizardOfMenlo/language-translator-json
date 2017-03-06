@@ -84,7 +84,7 @@ public class Main
 
         rm.setChecks(new Check[] { plural, feminine });
 
-        SingleRule makeSingular = new SingleRule("makeSingular", new String[] { plural.getName() }, new ReplacementRegex("a", "b", GenderType.MALE, NumberType.PLURAL), LanguageType.TRANSLATED);
+        SingleRule makeSingular = new SingleRule("makeSingular", new String[] { plural.getName() }, new ReplacementRegex("a", "b", GenderReplacementType.MALE, NumberReplacementType.PLURAL), LanguageType.TRANSLATED);
         rm.setSrules(new SingleRule[] { makeSingular });
 
         Clause standardClause = new Clause(new String[][]{
@@ -92,7 +92,7 @@ public class Main
         });
         MultipleRule checkSomething = new MultipleRule(
                 "checkSomething", standardClause, new ReplacementRegex[]
-                { new ReplacementRegex("c" , "d", GenderType.FEMALE, NumberType.PLURAL) }, LanguageType.ORIGINAl, new int[] { 0 }
+                { new ReplacementRegex("c" , "d", GenderReplacementType.FEMALE, NumberReplacementType.PLURAL) }, LanguageType.ORIGINAl, new int[] { 0 }
         );
         rm.setMrules(new MultipleRule[]{ checkSomething});
 

@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="339828f3-b8dd-47be-83a5-c58c6f546ad9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Tokenizer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GenderReplacementType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/NumberReplacementType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/englishSpanish.json" afterPath="$PROJECT_DIR$/data/englishSpanish.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Check.java" afterPath="$PROJECT_DIR$/src/Check.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Clause.java" afterPath="$PROJECT_DIR$/src/Clause.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dictionary.java" afterPath="$PROJECT_DIR$/src/Dictionary.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MultipleRule.java" afterPath="$PROJECT_DIR$/src/MultipleRule.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ReplacementRegex.java" afterPath="$PROJECT_DIR$/src/ReplacementRegex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RuleManager.java" afterPath="$PROJECT_DIR$/src/RuleManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SingleRule.java" afterPath="$PROJECT_DIR$/src/SingleRule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Word.java" afterPath="$PROJECT_DIR$/src/Word.java" />
     </list>
     <ignored path="NewTranslator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +31,7 @@
       <file leaf-file-name="RuleManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RuleManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
+            <state relative-caret-position="-252">
               <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
               <folding />
             </state>
@@ -61,8 +54,8 @@
       <file leaf-file-name="ReplacementRegex.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ReplacementRegex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+            <state relative-caret-position="774">
+              <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -91,11 +84,31 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+            <state relative-caret-position="1141">
+              <caret line="86" column="180" selection-start-line="86" selection-start-column="180" selection-end-line="86" selection-end-column="180" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GenderReplacementType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GenderReplacementType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NumberReplacementType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NumberReplacementType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,8 +128,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -141,10 +154,12 @@
         <option value="$PROJECT_DIR$/src/Check.java" />
         <option value="$PROJECT_DIR$/src/Clause.java" />
         <option value="$PROJECT_DIR$/src/Word.java" />
-        <option value="$PROJECT_DIR$/src/ReplacementRegex.java" />
         <option value="$PROJECT_DIR$/src/SingleRule.java" />
         <option value="$PROJECT_DIR$/src/MultipleRule.java" />
         <option value="$PROJECT_DIR$/data/englishSpanish.json" />
+        <option value="$PROJECT_DIR$/src/GenderReplacementType.java" />
+        <option value="$PROJECT_DIR$/src/NumberReplacementType.java" />
+        <option value="$PROJECT_DIR$/src/ReplacementRegex.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
@@ -719,7 +734,7 @@
       <workItem from="1488539054425" duration="3073000" />
       <workItem from="1488639028392" duration="26000" />
       <workItem from="1488726354152" duration="149000" />
-      <workItem from="1488794317985" duration="1231000" />
+      <workItem from="1488794317985" duration="1688000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored and done stuff">
       <created>1488537546881</created>
@@ -728,11 +743,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488537546881</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updated JSON">
+      <created>1488795548690</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1488795548690</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24421000" />
+    <option name="totallyTimeSpent" value="24878000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
@@ -788,7 +810,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactored and done stuff" />
     <MESSAGE value="Updated JSON" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated JSON" />
+    <MESSAGE value="Added Unchanged type&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Unchanged type&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -801,24 +824,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Dictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MultipleRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1656">
-          <caret line="92" column="16" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1179,10 +1184,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ReplacementRegex.java">
+    <entry file="file://$PROJECT_DIR$/data/englishSpanish.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+        <state relative-caret-position="792">
+          <caret line="44" column="1" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NumberReplacementType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1203,18 +1216,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/englishSpanish.json">
+    <entry file="file://$PROJECT_DIR$/src/GenderReplacementType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="44" column="1" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+        <state relative-caret-position="126">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RuleManager.java">
+    <entry file="file://$PROJECT_DIR$/src/ReplacementRegex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+        <state relative-caret-position="774">
+          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1230,10 +1243,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/RuleManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-252">
+          <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+        <state relative-caret-position="1141">
+          <caret line="86" column="180" selection-start-line="86" selection-start-column="180" selection-end-line="86" selection-end-column="180" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
