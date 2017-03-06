@@ -15,34 +15,41 @@ public class Clause implements IValidable
     // Returns null if no match found
     public Word[] getMatching(Word[] input, RuleManager rm)
     {
+        // Creates an array where the return will be put
         Word[] ret = new Word[checks.length];
+
+        // Which word are we checking
         int currentIndex = 0;
+
+        // For each i in the return array
         for (int i = 0; i < ret.length; i++)
         {
-            if (matchesAll(input[currentIndex], checks[i], rm))
+            // For each word after the index
+            for (int j = currentIndex; j < input.length; j++)
             {
-                ret[i] = input[currentIndex];
-            }
-            else if (currentIndex + 1 < input.length)
-            {
-                currentIndex++;
-            }
-            else
-            {
-                return null;
+                // If it matches with the i-th rule
+                if (matchesAll(input[j], checks[i], rm))
+                {
+                    ret[i] = input[j];
+                    currentIndex = j;
+                }
             }
         }
         return ret;
     }
 
+    // Checks if a word matches the list of checks
     public boolean matchesAll(Word toCheck, String[] checks, RuleManager rm)
     {
-        boolean matches = true;
         for (String check : checks)
         {
-            matches = matches && rm.getCheck(check).check(toCheck);
+            // If it doesn't match return false
+            if (!rm.getCheck(check).check(toCheck))
+            {
+                return false;
+            }
         }
-        return matches;
+        return true;
     }
 
     public int getSize() { return checks.length; }

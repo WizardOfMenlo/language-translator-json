@@ -4,6 +4,7 @@
 public class SingleRule implements IValidable
 {
 
+    // Default ctor
     public SingleRule(String name, String[] checks, ReplacementRegex rregex, LanguageType applyTo)
     {
         this.name = name;
@@ -22,6 +23,7 @@ public class SingleRule implements IValidable
 
     private LanguageType applyTo;
 
+    // Apply the replacement to the string
     public String apply(String s)
     {
         return s.replaceAll(replacementRegex.regex, replacementRegex.replacement);
@@ -29,44 +31,13 @@ public class SingleRule implements IValidable
 
     public Word apply(Word w, RuleManager rm)
     {
-        boolean satisfies = true;
+        // If if doesn't match all the checks, do nothing
         for (String check : checks)
         {
-            satisfies = satisfies && rm.getCheck(check).check(w);
+            if(!rm.getCheck(check).check(w)) return w;
         }
 
-        if (satisfies)
-        {
-            String s = "";
-            switch (applyTo)
-            {
-                case ORIGINAl:
-                    s = w.getOriginal();
-                    break;
-                case TRANSLATED:
-                    s = w.getTranslated();
-                    break;
-            }
-
-            s = s.replaceAll(replacementRegex.regex, replacementRegex.replacement);
-
-            switch (applyTo)
-            {
-                case ORIGINAl:
-                    w.setOriginal(s);
-                    break;
-                case TRANSLATED:
-                    w.setTranslated(s);
-                    break;
-            }
-
-            return w;
-        }
-        else
-        {
-            return w;
-        }
-
+        return replacementRegex.applyTo(w, applyTo);
     }
 
     @Override

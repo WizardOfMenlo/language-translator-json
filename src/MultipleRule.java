@@ -12,6 +12,7 @@ public class MultipleRule implements IValidable
 
     private int[] rearrangements;
 
+    // Constructor
     public MultipleRule(String name, Clause clause, ReplacementRegex[] rregexs, LanguageType apply, int[] rearrangements)
     {
         this.name = name;
@@ -44,24 +45,20 @@ public class MultipleRule implements IValidable
                 switch (applyTo)
                 {
                     case ORIGINAl:
-                        String valTr = val.getOriginal();
-                        if (match.getOriginal().equals(valTr))
+                        if (match.getOriginal().equals(val.getOriginal()))
                         {
                             indexInArr = i;
-                            valTr = valTr.replaceAll(replacements[i].regex, replacements[i].replacement);
-                            val.setOriginal(valTr);
+                            replacements[i].applyTo(val, applyTo);
                             ret[rearrangements[matchCount]] = val;
                             matchCount++;
                             break;
                         }
                         break;
                     case TRANSLATED:
-                        String valOr = val.getTranslated();
-                        if (match.getTranslated().equals(valOr))
+                        if (match.getTranslated().equals(val.getTranslated()))
                         {
                             indexInArr = i;
-                            valOr = valOr.replaceAll(replacements[i].regex, replacements[i].replacement);
-                            val.setTranslated(valOr);
+                            replacements[i].applyTo(val, applyTo);
                             ret[rearrangements[matchCount]] = val;
                             matchCount++;
                             break;

@@ -7,6 +7,7 @@ import java.util.stream.Stream;
  */
 public class Check implements IValidable
 {
+    // Default ctor
     public Check(String name, GrammaticalType[] appliesToGT, NumberType[] appliesToNumber, GenderType[] appliesToGender, LanguageType applyToLang, String regex)
     {
         this.name = name;
@@ -26,6 +27,7 @@ public class Check implements IValidable
 
     private String regexChecker;
 
+    // Checks if a string matches the regex
     public boolean check(String toCheck)
     {
         Pattern p = Pattern.compile(regexChecker);
@@ -35,11 +37,13 @@ public class Check implements IValidable
 
     public boolean check(Word wd)
     {
+        // Checks if the wd is one of the correct types
         if (Stream.of(appliesToType).filter(t -> t == wd.getType()).count() == 0) { return false; }
         else if (Stream.of(appliesToGender).filter(t -> t == wd.getGender()).count() == 0) { return false; }
         else if (Stream.of(appliesToNumber).filter(t -> t == wd.getNumber()).count() == 0) { return false; }
         else
         {
+            // Decides where to apply it
             switch (applyToLanguage)
             {
                 case ORIGINAl:
