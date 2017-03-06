@@ -233,6 +233,18 @@
     },
 
     {
+      "name": "pronoun",
+      "appliesToType":
+      [
+        "PRONOUN"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "ORIGINAL",
+      "regexChecker": "."
+    },
+
+    {
       "name": "isTu",
       "appliesToType":
       [
@@ -266,6 +278,79 @@
       "appliesToGender": ["MALE", "FEMALE"],
       "applyToLanguage": "TRANSLATED",
       "regexChecker": "."
+    },
+
+    {
+      "name": "verb-or-with",
+      "appliesToType":
+      [
+        "VERB",
+        "CONJUNCTION"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "ORIGINAL",
+      "regexChecker": "^(?!.*(\band|\bbecause|\bor|\bbut|\balthough|\bthen|\bexcept)).*"
+    },
+
+    {
+      "name": "isSoy",
+      "appliesToType":
+      [
+        "VERB"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "soy$"
+    },
+
+    {
+      "name": "isEres",
+      "appliesToType":
+      [
+        "VERB"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "eres$"
+    },
+
+    {
+      "name": "isEs",
+      "appliesToType":
+      [
+        "VERB"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "es$"
+    },
+
+    {
+      "name": "isSomos",
+      "appliesToType":
+      [
+        "VERB"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "somos$"
+    },
+
+    {
+      "name": "isSon",
+      "appliesToType":
+      [
+        "VERB"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "son$"
     }
 
 
@@ -326,11 +411,24 @@
     },
 
     {
+      "name": "makeMaleSpanishDeterminateArticlePlural",
+      "checks": ["plural", "male", "article", "determinate"],
+      "replacementRegex":
+      {
+        "regex": "el",
+        "replacement": "los",
+        "replacementGender": "UNCHANGED",
+        "replacementNumber": "UNCHANGED"
+      },
+      "applyTo": "TRANSLATED"
+    },
+
+    {
       "name": "makeFemaleSpanishDeterminateArticlePlural",
       "checks": ["plural", "female", "article", "determinate"],
       "replacementRegex":
       {
-        "regex": "los",
+        "regex": "el",
         "replacement": "las",
         "replacementGender": "UNCHANGED",
         "replacementNumber": "UNCHANGED"
@@ -457,6 +555,64 @@
     },
 
     {
+      "name": "concordArticleGender",
+      "clause":
+      {
+        "checks":
+        [
+          ["article"],
+          ["noun", "female"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "FEMALE",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        }
+      ],
+      "applyTo": "ORIGINAL",
+      "rearrangements": [0, 1]
+    },
+
+    {
+      "name": "concordArticleNumber",
+      "clause":
+      {
+        "checks":
+        [
+          ["article"],
+          ["noun", "plural"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "PLURAL"
+        },
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        }
+      ],
+      "applyTo": "ORIGINAL",
+      "rearrangements": [0, 1]
+    },
+
+    {
       "name": "rearrangeAdjNoun",
       "clause":
       {
@@ -540,7 +696,190 @@
       ],
       "applyTo": "TRANSLATED",
       "rearrangements": [0, 1]
+    },
+
+    {
+      "name": "followsSoy",
+      "clause":
+      {
+        "checks":
+        [
+          ["pronoun"],
+          ["isSoy"],
+          ["verb-or-with"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "soy",
+          "replacement": "estoy",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        }
+      ],
+      "applyTo": "TRANSLATED",
+      "rearrangements": [0, 1, 2]
+    },
+
+    {
+      "name": "followsEres",
+      "clause":
+      {
+        "checks":
+        [
+          ["pronoun"],
+          ["isEres"],
+          ["verb-or-with"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "eres",
+          "replacement": "estás",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        }
+      ],
+      "applyTo": "TRANSLATED",
+      "rearrangements": [0, 1, 2]
+    },
+
+    {
+      "name": "followsEs",
+      "clause":
+      {
+        "checks":
+        [
+          ["pronoun"],
+          ["isEs"],
+          ["verb-or-with"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "es",
+          "replacement": "está",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        }
+      ],
+      "applyTo": "TRANSLATED",
+      "rearrangements": [0, 1, 2]
+    },
+
+    {
+      "name": "followsSomos",
+      "clause":
+      {
+        "checks":
+        [
+          ["pronoun"],
+          ["isSomos"],
+          ["verb-or-with"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "somos",
+          "replacement": "estamos",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        }
+      ],
+      "applyTo": "TRANSLATED",
+      "rearrangements": [0, 1, 2]
+    },
+
+    {
+      "name": "followsSon",
+      "clause":
+      {
+        "checks":
+        [
+          ["pronoun"],
+          ["isSon"],
+          ["verb-or-with"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "son",
+          "replacement": "están",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        }
+      ],
+      "applyTo": "TRANSLATED",
+      "rearrangements": [0, 1, 2]
     }
+
+
+
 
 
   ],
@@ -549,7 +888,9 @@
 
   "orderOfOperation":
     [
-      "concordGender", "concordNumber", "concordPossessiveNumber", "rearrangeAdjNoun", "makeFemaleSpanish", "makePluralSpanish", "makeFemaleSpanishDeterminateArticleSingular",
-      "makeFemaleSpanishDeterminateArticlePlural", "makeFemaleSpanishIndeterminateArticle", "makePluralSpanishPossessive", "concordTu", "concordNosotros"
+      "concordGender", "concordNumber", "concordPossessiveNumber", "concordArticleGender", "concordArticleNumber", "rearrangeAdjNoun", "makeFemaleSpanish", "makePluralSpanish",
+      "makeFemaleSpanishDeterminateArticleSingular", "makeMaleSpanishDeterminateArticlePlural",
+      "makeFemaleSpanishDeterminateArticlePlural", "makeFemaleSpanishIndeterminateArticle", "makePluralSpanishPossessive", "concordTu", "concordNosotros",
+      "followsSoy", "followsEres", "followsEs", "followsSomos", "followsSon"
     ]
 }
