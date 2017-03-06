@@ -16,6 +16,22 @@
       "regexChecker": "([a-z])\\w+[s]\b"
     },
     {
+      "name": "pluralDummyP",
+      "appliesToType": [
+       "POSSESSIVE"
+      ],
+      "appliesToNumber": [
+        "PLURAL"
+      ],
+      "appliesToGender": [
+        "MALE",
+        "FEMALE"
+      ],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "."
+    },
+
+    {
       "name": "singular",
       "appliesToType": [
         "NOUN"
@@ -251,6 +267,18 @@
       },
 
       "applyTo": "TRANSLATED"
+    },
+    {
+      "name": "pluralPossesives",
+      "checks": ["pluralDummyP"],
+      "replacementRegex":{
+        "regex": "\\W(\b)",
+        "replacementRegex": "s",
+        "replacementGender": "UNCHANGED",
+        "replacementNumber": "PLURAL"
+      },
+
+      "applyTo": "TRANSLATED"
     }
 
   ],
@@ -285,6 +313,7 @@
     "articleThePluralF",
     "pluralAdjectiveVowel",
     "pluralAdjectiveNoVowel",
+    "pluralPossesives",
     "checkSomething"
 
   ]
