@@ -76,13 +76,13 @@ public class Main
                 new GrammaticalType[]{GrammaticalType.ADJECTIVE},
                 new NumberType[] { NumberType.PLURAL },
                 new GenderType[] { GenderType.MALE, GenderType.FEMALE },
-                LanguageType.ORIGINAl, "fafad");
+                LanguageType.ORIGINAL, "fafad");
 
         Check feminine = new Check("feminine",
                 new GrammaticalType[]{GrammaticalType.ADJECTIVE},
                 new NumberType[] { NumberType.SINGULAR, NumberType.PLURAL },
                 new GenderType[] { GenderType.FEMALE },
-                LanguageType.ORIGINAl, "fafad");
+                LanguageType.ORIGINAL, "fafad");
 
         rm.setChecks(new Check[] { plural, feminine });
 
@@ -94,7 +94,7 @@ public class Main
         });
         MultipleRule checkSomething = new MultipleRule(
                 "checkSomething", standardClause, new ReplacementRegex[]
-                { new ReplacementRegex("c" , "d", GenderReplacementType.FEMALE, NumberReplacementType.PLURAL) }, LanguageType.ORIGINAl, new int[] { 0 }
+                { new ReplacementRegex("c" , "d", GenderReplacementType.FEMALE, NumberReplacementType.PLURAL) }, LanguageType.ORIGINAL, new int[] { 0 }
         );
         rm.setMrules(new MultipleRule[]{ checkSomething});
 

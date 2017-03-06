@@ -12,11 +12,18 @@ public class Clause implements IValidable
     //"clause" : { "checks" : [["adj", "plural" ], ["noun", "plural" ]}
     public String[][] checks;
 
+    class Match
+    {
+        public Match(Word w, int i) { word = w; index = i;}
+        Word word;
+        int index;
+    }
+
     // Returns null if no match found
-    public Word[] getMatching(Word[] input, RuleManager rm)
+    public Match[] getMatching(Word[] input, RuleManager rm)
     {
         // Creates an array where the return will be put
-        Word[] ret = new Word[checks.length];
+        Match[] ret = new Match[checks.length];
 
         // Which word are we checking
         int currentIndex = 0;
@@ -30,7 +37,7 @@ public class Clause implements IValidable
                 // If it matches with the i-th rule
                 if (matchesAll(input[j], checks[i], rm))
                 {
-                    ret[i] = input[j];
+                    ret[i] = new Match(input[j], j-1);
                     currentIndex = j;
                 }
             }

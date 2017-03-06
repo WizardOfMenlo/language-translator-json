@@ -3,5 +3,5 @@
  */
 public enum  LanguageType
 {
-    ORIGINAl, TRANSLATED
+    ORIGINAL, TRANSLATED
 }

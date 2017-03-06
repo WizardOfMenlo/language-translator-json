@@ -25,11 +25,12 @@ public class MultipleRule implements IValidable
     public Word[] applyRule (Word[] arr, RuleManager rm)
     {
         // Gets the matching clause
-        Word[] matches = clause.getMatching(arr, rm);
+        Clause.Match[] matches = clause.getMatching(arr, rm);
+
         // If no matches nothing to be done
         if (matches == null) { return arr; }
         boolean nullable = true;
-        for (Word w : matches) { if (w != null) { nullable = false; break; } }
+        for (Clause.Match w : matches) { if (w.word != null) { nullable = false; break; } }
         if (nullable)
         {
             return arr;
@@ -38,40 +39,15 @@ public class MultipleRule implements IValidable
         // This will be returned
         Word[] ret = new Word[arr.length];
 
-        int indexInArr = 0;
-
-        // For each match
-        int matchCount = 0;
-        for (Word match : matches)
+        for (int i = 0; i < matches.length; i++)
         {
-            // Check arr[i], arr[i+1], ... arr[arr.length -1]
-            for (int i = indexInArr; i < arr.length; i++)
+            Clause.Match m = matches[i];
+            if (m.word != null)
             {
-                Word val = arr[i];
-                switch (applyTo)
-                {
-                    case ORIGINAl:
-                        if (match.getOriginal().equals(val.getOriginal()))
-                        {
-                            indexInArr = i;
-                            replacements[i].applyTo(val, applyTo);
-                            ret[rearrangements[matchCount]] = val;
-                            matchCount++;
-                            break;
-                        }
-                        break;
-                    case TRANSLATED:
-                        if (match.getTranslated().equals(val.getTranslated()))
-                        {
-                            indexInArr = i;
-                            replacements[i].applyTo(val, applyTo);
-                            ret[rearrangements[matchCount]] = val;
-                            matchCount++;
-                            break;
-                        }
-                        break;
-                }
-
+                Word w = arr[m.index];
+                int newIndex = rearrangements[m.index];
+                ReplacementRegex r = replacements[i];
+                ret[newIndex] = r.applyTo(w, applyTo);
             }
         }
 
@@ -89,6 +65,11 @@ public class MultipleRule implements IValidable
     @Override
     public boolean valid()
     {
+        for (ReplacementRegex r : replacements)
+        {
+            if (!r.valid()) { return false; }
+        }
+
         return clause.valid() &&
                 !name.trim().equals("") &&
                 replacements.length > 0 &&

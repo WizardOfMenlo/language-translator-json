@@ -20,7 +20,7 @@ public class Dictionary
         word = word.trim().toLowerCase();
 
         // Get a singular form of the word
-        String singular = rm.getSingleRuleByName("makeSingular").apply(word);
+        String singular = rm.getSingleRuleByName("makeSingularEnglish").apply(word);
 
         // Open the dictionary file
         try (Stream<String> ss = Files.lines(path_))

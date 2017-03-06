@@ -1,7 +1,10 @@
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
+
 /**
  * Created by gf45 on 02/03/17.
  */
-public class ReplacementRegex
+public class ReplacementRegex implements IValidable
 {
     public ReplacementRegex(String regex, String replacement, GenderReplacementType replacementGender, NumberReplacementType replacementNumber)
     {
@@ -46,7 +49,7 @@ public class ReplacementRegex
         String s;
         switch (lang)
         {
-            case ORIGINAl:
+            case ORIGINAL:
                 s = w.getOriginal();
                 s = s.replaceAll(regex, replacement);
                 w.setOriginal(s);
@@ -59,5 +62,19 @@ public class ReplacementRegex
         }
 
         return w;
+    }
+
+    @Override
+    public boolean valid()
+    {
+        try
+        {
+            Pattern.compile(regex);
+        }
+        catch (PatternSyntaxException e)
+        {
+            return false;
+        }
+        return true;
     }
 }
