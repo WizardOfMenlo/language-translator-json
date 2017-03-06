@@ -3,7 +3,7 @@
  */
 public class ReplacementRegex
 {
-    public ReplacementRegex(String regex, String replacement, GenderType replacementGender, NumberType replacementNumber)
+    public ReplacementRegex(String regex, String replacement, GenderReplacementType replacementGender, NumberReplacementType replacementNumber)
     {
         this.regex = regex;
         this.replacement = replacement;
@@ -14,13 +14,34 @@ public class ReplacementRegex
     public String regex;
     public String replacement;
 
-    public GenderType replacementGender;
-    public NumberType replacementNumber;
+    public GenderReplacementType replacementGender;
+    public NumberReplacementType replacementNumber;
 
     public Word applyTo(Word w, LanguageType lang)
     {
-        w.setGender(replacementGender);
-        w.setNumber(replacementNumber);
+        switch (replacementGender)
+        {
+            case MALE:
+                w.setGender(GenderType.MALE);
+                break;
+            case FEMALE:
+                w.setGender(GenderType.FEMALE);
+                break;
+            case UNCHANGED:
+                break;
+        }
+
+        switch (replacementNumber)
+        {
+            case SINGULAR:
+                w.setNumber(NumberType.SINGULAR);
+                break;
+            case PLURAL:
+                w.setNumber(NumberType.PLURAL);
+                break;
+            case UNCHANGED:
+                break;
+        }
 
         String s;
         switch (lang)
