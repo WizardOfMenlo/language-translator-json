@@ -230,6 +230,42 @@
       "appliesToGender": ["MALE", "FEMALE"],
       "applyToLanguage": "TRANSLATED",
       "regexChecker": "."
+    },
+
+    {
+      "name": "isTu",
+      "appliesToType":
+      [
+        "PRONOUN"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "ORIGINAL",
+      "regexChecker": "you"
+    },
+
+    {
+      "name": "isNosotros",
+      "appliesToType":
+      [
+        "PRONOUN"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "ORIGINAL",
+      "regexChecker": "we"
+    },
+
+    {
+      "name": "verb",
+      "appliesToType":
+      [
+        "VERB"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "."
     }
 
 
@@ -447,7 +483,66 @@
       ],
       "applyTo": "ORIGINAL",
       "rearrangements": [1, 0]
+    },
+
+    {
+      "name": "concordTu",
+      "clause":
+      {
+        "checks":
+        [
+          ["isTu"],
+          ["verb"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "son",
+          "replacement": "eres",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        }
+      ],
+      "applyTo": "TRANSLATED",
+      "rearrangements": [0, 1]
+    },
+    {
+      "name": "concordNosotros",
+      "clause":
+      {
+        "checks":
+        [
+          ["isNosotros"],
+          ["verb"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "son",
+          "replacement": "somos",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        }
+      ],
+      "applyTo": "TRANSLATED",
+      "rearrangements": [0, 1]
     }
+
+
   ],
 
 
@@ -455,6 +550,6 @@
   "orderOfOperation":
     [
       "concordGender", "concordNumber", "concordPossessiveNumber", "rearrangeAdjNoun", "makeFemaleSpanish", "makePluralSpanish", "makeFemaleSpanishDeterminateArticleSingular",
-      "makeFemaleSpanishDeterminateArticlePlural", "makeFemaleSpanishIndeterminateArticle", "makePluralSpanishPossessive"
+      "makeFemaleSpanishDeterminateArticlePlural", "makeFemaleSpanishIndeterminateArticle", "makePluralSpanishPossessive", "concordTu", "concordNosotros"
     ]
 }
