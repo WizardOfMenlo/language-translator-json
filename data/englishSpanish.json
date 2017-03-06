@@ -3,7 +3,7 @@
   [
 
     {
-      "name": "_male",
+      "name": "_female",
       "appliesToType":
       [
         "ARTICLE",
@@ -18,7 +18,7 @@
       "appliesToNumber": ["SINGULAR", "PLURAL"],
       "appliesToGender": ["MALE", "FEMALE"],
       "applyToLanguage": "TRANSLATED",
-      "regexChecker": "([a-z])\\w+[^a,d,z,ión]\b"
+      "regexChecker": "[a,d,z,ión]$"
     },
 
     {
@@ -27,7 +27,8 @@
       [
         "ARTICLE",
         "NOUN",
-        "PRONOUN"
+        "PRONOUN",
+        "ADJECTIVE"
       ],
       "appliesToNumber": ["SINGULAR", "PLURAL"],
       "appliesToGender": ["MALE"],
@@ -41,7 +42,8 @@
       [
         "ARTICLE",
         "NOUN",
-        "PRONOUN"
+        "PRONOUN",
+        "ADJECTIVE"
       ],
       "appliesToNumber": ["SINGULAR", "PLURAL"],
       "appliesToGender": ["FEMALE"],
@@ -65,7 +67,7 @@
       "appliesToNumber": ["SINGULAR", "PLURAL"],
       "appliesToGender": ["MALE", "FEMALE"],
       "applyToLanguage": "ORIGINAL",
-      "regexChecker": "([a-z])\\w+[s]\b"
+      "regexChecker": "[s]$"
     },
 
     {
@@ -75,7 +77,8 @@
         "ARTICLE",
         "NOUN",
         "PRONOUN",
-        "POSSESSIVE"
+        "POSSESSIVE",
+        "ADJECTIVE"
       ],
       "appliesToNumber": ["SINGULAR"],
       "appliesToGender": ["MALE", "FEMALE"],
@@ -90,7 +93,8 @@
         "ARTICLE",
         "NOUN",
         "PRONOUN",
-        "POSSESSIVE"
+        "POSSESSIVE",
+        "ADJECTIVE"
       ],
       "appliesToNumber": [ "PLURAL"],
       "appliesToGender": ["MALE", "FEMALE"],
@@ -203,7 +207,7 @@
       "checks": ["_plural"],
       "replacementRegex":
       {
-        "regex": "s\b",
+        "regex": "s$",
         "replacement": "",
         "replacementGender": "UNCHANGED",
         "replacementNumber": "SINGULAR"
@@ -213,7 +217,7 @@
 
     {
       "name": "makePluralSpanish",
-      "checks": ["plural"],
+      "checks": ["plural", "not-article"],
       "replacementRegex":
       {
         "regex": "$",
@@ -242,7 +246,7 @@
       "checks": ["singular", "female", "article", "determinate"],
       "replacementRegex":
       {
-        "regex": "el\b",
+        "regex": "el$",
         "replacement": "la",
         "replacementGender": "UNCHANGED",
         "replacementNumber": "UNCHANGED"
@@ -375,7 +379,7 @@
 
   "orderOfOperation":
     [
-      "concordNumber", "concordGender", "rearrangeAdjNoun", "makeFemaleSpanish", "makePluralSpanish", "makeFemaleSpanishDeterminateArticleSingular",
+      "concordGender", "concordNumber", "rearrangeAdjNoun", "makeFemaleSpanish", "makePluralSpanish", "makeFemaleSpanishDeterminateArticleSingular",
       "makeFemaleSpanishDeterminateArticlePlural", "makeFemaleSpanishIndeterminateArticle"
     ]
 }

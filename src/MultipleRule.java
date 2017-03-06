@@ -28,12 +28,9 @@ public class MultipleRule implements IValidable
         Clause.Match[] matches = clause.getMatching(arr, rm);
 
         // If no matches nothing to be done
-        if (matches == null) { return arr; }
-        boolean nullable = true;
-        for (Clause.Match w : matches) { if (w.word != null) { nullable = false; break; } }
-        if (nullable)
+        for (Clause.Match w : matches)
         {
-            return arr;
+            if (w == null || w.word == null) { return arr; }
         }
 
         // This will be returned
@@ -42,10 +39,10 @@ public class MultipleRule implements IValidable
         for (int i = 0; i < matches.length; i++)
         {
             Clause.Match m = matches[i];
-            if (m.word != null)
+            if (m != null && m.word != null)
             {
-                Word w = arr[m.index];
-                int newIndex = rearrangements[m.index];
+                Word w = arr[m.indexWord];
+                int newIndex =  matches[rearrangements[i]].indexWord;
                 ReplacementRegex r = replacements[i];
                 ret[newIndex] = r.applyTo(w, applyTo);
             }

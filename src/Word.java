@@ -21,12 +21,6 @@ public class Word
         // The translation is the second word
         String translated = parts[1];
 
-        // Male is checked from the spanish
-        GenderType gm = rm.getCheck("_male").check(translated) ? GenderType.MALE : GenderType.FEMALE;
-
-        // Number is checked from the english
-        NumberType nt = rm.getCheck("_plural").check(original) ? NumberType.SINGULAR : NumberType.PLURAL;
-
         // gets the correct grammatical type from the stuff
         GrammaticalType gt;
         switch (parts[2].trim().toLowerCase())
@@ -62,6 +56,22 @@ public class Word
                 gt = GrammaticalType.NOUN;
         }
 
+        GenderType gm = GenderType.MALE;
+        NumberType nt = NumberType.SINGULAR;
+
+        if (gt == GrammaticalType.NOUN)
+        {
+            // Male is checked from the spanish
+            gm = rm.getCheck("_female").check(translated) ? GenderType.FEMALE : GenderType.MALE;
+
+            // Number is checked from the english
+            nt = rm.getCheck("_plural").check(original) ? NumberType.PLURAL : NumberType.SINGULAR;
+        }
+
+
+
+
+
         // Returns a word with those characteristics
         return new Word(original, translated, gm, nt, gt);
 
@@ -92,5 +102,11 @@ public class Word
     public String getTranslated()
     {
         return translated_;
+    }
+
+    @Override
+    public String toString()
+    {
+        return original_ + " -> " + translated_;
     }
 }

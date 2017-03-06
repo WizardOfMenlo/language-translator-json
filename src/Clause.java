@@ -14,9 +14,9 @@ public class Clause implements IValidable
 
     class Match
     {
-        public Match(Word w, int i) { word = w; index = i;}
+        public Match(Word w, int iw) { word = w; indexWord = iw; }
         Word word;
-        int index;
+        int indexWord;
     }
 
     // Returns null if no match found
@@ -25,23 +25,25 @@ public class Clause implements IValidable
         // Creates an array where the return will be put
         Match[] ret = new Match[checks.length];
 
-        // Which word are we checking
-        int currentIndex = 0;
 
-        // For each i in the return array
-        for (int i = 0; i < ret.length; i++)
+        int checkRow = 0;
+        int currentWord = 0;
+        while(checkRow < checks.length && currentWord < input.length)
         {
-            // For each word after the index
-            for (int j = currentIndex; j < input.length; j++)
+            Word w = input[currentWord];
+            String[] currentChecks = checks[checkRow];
+            if (matchesAll(w, currentChecks, rm))
             {
-                // If it matches with the i-th rule
-                if (matchesAll(input[j], checks[i], rm))
-                {
-                    ret[i] = new Match(input[j], j-1);
-                    currentIndex = j;
-                }
+                ret[checkRow] = new Match(w, currentWord);
+                currentWord++;
+                checkRow++;
+            }
+            else
+            {
+                currentWord++;
             }
         }
+
         return ret;
     }
 
