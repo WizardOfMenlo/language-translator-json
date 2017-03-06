@@ -6,6 +6,7 @@
       "name": "_female",
       "appliesToType":
       [
+        "ADJECTIVE",
         "ARTICLE",
         "NOUN",
         "PRONOUN",
@@ -55,7 +56,8 @@
       "name": "_plural",
       "appliesToType":
       [
-       "ARTICLE",
+        "ADJECTIVE",
+        "ARTICLE",
         "NOUN",
         "PRONOUN",
         "VERB",
@@ -118,6 +120,7 @@
       "name": "not-noun",
       "appliesToType":
       [
+        "ADJECTIVE",
         "ARTICLE",
         "PRONOUN",
         "VERB",
@@ -147,6 +150,7 @@
       "name": "not-article",
       "appliesToType":
       [
+        "ADJECTIVE",
         "NOUN",
         "PRONOUN",
         "VERB",
@@ -195,6 +199,37 @@
       "appliesToGender": ["MALE", "FEMALE"],
       "applyToLanguage": "TRANSLATED",
       "regexChecker": "."
+    },
+
+    {
+      "name": "possessive",
+      "appliesToType":
+      [
+        "POSSESSIVE"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "."
+    },
+
+    {
+      "name": "not-possessive",
+      "appliesToType":
+      [
+        "ADJECTIVE",
+        "NOUN",
+        "PRONOUN",
+        "VERB",
+        "ARTICLE",
+        "CONJUNCTION",
+        "PROPOSITION",
+        "NEGATION"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "."
     }
 
 
@@ -217,7 +252,7 @@
 
     {
       "name": "makePluralSpanish",
-      "checks": ["plural", "not-article"],
+      "checks": ["plural", "not-article", "not-possessive"],
       "replacementRegex":
       {
         "regex": "$",
@@ -230,7 +265,7 @@
 
     {
       "name": "makeFemaleSpanish",
-      "checks": ["female", "not-noun", "not-article"],
+      "checks": ["female", "not-noun", "not-article", "not-possessive"],
       "replacementRegex":
       {
         "regex": ".$",
@@ -274,6 +309,19 @@
       {
         "regex": "un",
         "replacement": "una",
+        "replacementGender": "UNCHANGED",
+        "replacementNumber": "UNCHANGED"
+      },
+      "applyTo": "TRANSLATED"
+    },
+
+    {
+      "name": "makePluralSpanishPossessive",
+      "checks": ["plural", "possessive"],
+      "replacementRegex":
+      {
+        "regex": "$",
+        "replacement": "s",
         "replacementGender": "UNCHANGED",
         "replacementNumber": "UNCHANGED"
       },
@@ -344,6 +392,35 @@
     },
 
     {
+      "name": "concordPossessiveNumber",
+      "clause":
+      {
+        "checks":
+        [
+          ["possessive"],
+          ["noun", "plural"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "PLURAL"
+        },
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        }
+      ],
+      "applyTo": "ORIGINAL",
+      "rearrangements": [0, 1]
+    },
+
+    {
       "name": "rearrangeAdjNoun",
       "clause":
       {
@@ -373,13 +450,11 @@
     }
   ],
 
-  // TODO
-  // Find the metadata for each word in the Word[], and concord them according to it
 
 
   "orderOfOperation":
     [
-      "concordGender", "concordNumber", "rearrangeAdjNoun", "makeFemaleSpanish", "makePluralSpanish", "makeFemaleSpanishDeterminateArticleSingular",
-      "makeFemaleSpanishDeterminateArticlePlural", "makeFemaleSpanishIndeterminateArticle"
+      "concordGender", "concordNumber", "concordPossessiveNumber", "rearrangeAdjNoun", "makeFemaleSpanish", "makePluralSpanish", "makeFemaleSpanishDeterminateArticleSingular",
+      "makeFemaleSpanishDeterminateArticlePlural", "makeFemaleSpanishIndeterminateArticle", "makePluralSpanishPossessive"
     ]
 }
