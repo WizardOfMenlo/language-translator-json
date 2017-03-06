@@ -22,10 +22,10 @@ public class Word
         String translated = parts[1];
 
         // Male is checked from the spanish
-        GenderType gm = rm.getCheck("male").check(translated) ? GenderType.MALE : GenderType.FEMALE;
+        GenderType gm = rm.getCheck("_male").check(translated) ? GenderType.MALE : GenderType.FEMALE;
 
         // Number is checked from the english
-        NumberType nt = rm.getCheck("singular").check(original) ? NumberType.SINGULAR : NumberType.PLURAL;
+        NumberType nt = rm.getCheck("_plural").check(original) ? NumberType.SINGULAR : NumberType.PLURAL;
 
         // gets the correct grammatical type from the stuff
         GrammaticalType gt;

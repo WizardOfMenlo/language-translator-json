@@ -46,7 +46,7 @@ public class Check implements IValidable
             // Decides where to apply it
             switch (applyToLanguage)
             {
-                case ORIGINAl:
+                case ORIGINAL:
                     return check(wd.getOriginal());
                 case TRANSLATED:
                     return check(wd.getTranslated());
