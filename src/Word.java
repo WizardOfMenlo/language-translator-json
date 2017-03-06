@@ -2,6 +2,7 @@
 
 public class Word
 {
+    // Default ctor
     public Word(String original, String translated, GenderType gender, NumberType number, GrammaticalType type)
     {
         original_ = original;
@@ -14,13 +15,19 @@ public class Word
 
     public static Word fromCsv(String line, String original, RuleManager rm)
     {
+        // Split the line at the comma (since csv)
         String[] parts = line.split(",");
 
+        // The translation is the second word
         String translated = parts[1];
 
+        // Male is checked from the spanish
         GenderType gm = rm.getCheck("male").check(translated) ? GenderType.MALE : GenderType.FEMALE;
+
+        // Number is checked from the english
         NumberType nt = rm.getCheck("singular").check(original) ? NumberType.SINGULAR : NumberType.PLURAL;
 
+        // gets the correct grammatical type from the stuff
         GrammaticalType gt;
         switch (parts[2].trim().toLowerCase())
         {
@@ -55,6 +62,7 @@ public class Word
                 gt = GrammaticalType.NOUN;
         }
 
+        // Returns a word with those characteristics
         return new Word(original, translated, gm, nt, gt);
 
 
@@ -63,6 +71,9 @@ public class Word
     public GrammaticalType getType() { return type_; }
     public GenderType getGender() { return gender_; }
     public NumberType getNumber() { return number_; }
+
+    public void setGender(GenderType gender) { gender_ = gender; }
+    public void setNumber(NumberType number) { number_ = number; }
 
     private String original_;
     private String translated_;

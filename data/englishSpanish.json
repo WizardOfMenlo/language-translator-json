@@ -1,74 +1,45 @@
 {
-  "checks": [
-    {
-      "name": "plural",
-      "appliesToType": [
-        "ADJECTIVE"
-      ],
-      "appliesToNumber": [
-        "PLURAL"
-      ],
-      "appliesToGender": [
-        "MALE",
-        "FEMALE"
-      ],
-      "applyToLanguage": "ORIGINAl",
-      "regexChecker": "fafad"
+  "checks": [{
+    "name": "plural",
+    "appliesToType": ["ADJECTIVE"],
+    "appliesToNumber": ["PLURAL"],
+    "appliesToGender": ["MALE", "FEMALE"],
+    "applyToLanguage": "ORIGINAl",
+    "regexChecker": "fafad"
+  }, {
+    "name": "feminine",
+    "appliesToType": ["ADJECTIVE"],
+    "appliesToNumber": ["SINGULAR", "PLURAL"],
+    "appliesToGender": ["FEMALE"],
+    "applyToLanguage": "ORIGINAl",
+    "regexChecker": "fafad"
+  }],
+  "srules": [{
+    "name": "makeSingular",
+    "checks": ["plural"],
+    "replacementRegex": {
+      "regex": "a",
+      "replacement": "b",
+      "replacementGender": "MALE",
+      "replacementNumber": "PLURAL"
     },
-    {
-      "name": "feminine",
-      "appliesToType": [
-        "ADJECTIVE"
-      ],
-      "appliesToNumber": [
-        "SINGULAR",
-        "PLURAL"
-      ],
-      "appliesToGender": [
-        "FEMALE"
-      ],
-      "applyToLanguage": "ORIGINAl",
-      "regexChecker": "fafad"
-    }
-  ],
-  "srules": [
-    {
-      "name": "makeSingular",
+    "applyTo": "TRANSLATED"
+  }],
+  "mrules": [{
+    "name": "checkSomething",
+    "clause": {
       "checks": [
-        "plural"
-      ],
-      "replacementRegex": {
-        "regex": "a",
-        "replacement": "b"
-      },
-      "applyTo": "TRANSLATED"
-    }
-  ],
-  "mrules": [
-    {
-      "name": "checkSomething",
-      "clause": {
-        "checks": [
-          [
-            "plural",
-            "feminine"
-          ]
-        ]
-      },
-      "replacements": [
-        {
-          "regex": "c",
-          "replacement": "d"
-        }
-      ],
-      "applyTo": "ORIGINAl",
-      "rearrangements": [
-        0
+        ["plural", "feminine"]
       ]
-    }
-  ],
-  "orderOfOperation": [
-    "makeSingular",
-    "checkSomething"
-  ]
+    },
+    "replacements": [{
+      "regex": "c",
+      "replacement": "d",
+      "replacementGender": "FEMALE",
+      "replacementNumber": "PLURAL"
+    }],
+    "applyTo": "ORIGINAl",
+    "rearrangements": [0]
+  }],
+  "orderOfOperation": ["makeSingular", "checkSomething"]
 }
