@@ -64,7 +64,10 @@ public class MultipleRule implements IValidable
     {
         for (ReplacementRegex r : replacements)
         {
-            if (!r.valid()) { return false; }
+            if (r == null || !r.valid())
+            {
+                return false;
+            }
         }
 
         return clause.valid() &&
