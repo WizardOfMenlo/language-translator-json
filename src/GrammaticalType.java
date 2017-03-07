@@ -8,6 +8,6 @@ public enum GrammaticalType
     VERB,
     POSSESSIVE,
     CONJUNCTION,
-    PROPOSITION,
+    PREPOSITION,
     NEGATION,
 }

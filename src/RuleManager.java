@@ -116,7 +116,10 @@ public class RuleManager implements IValidable
 
         for (MultipleRule m : mrules)
         {
-            if (!m.valid()) return false;
+            if (m == null || !m.valid())
+            {
+                return false;
+            }
         }
 
         return true;

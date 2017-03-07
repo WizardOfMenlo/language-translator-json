@@ -20,13 +20,19 @@ public class Dictionary
         word = word.trim().toLowerCase();
 
         // Get a singular form of the word
-        String singular = rm.getSingleRuleByName("makeSingularEnglish").apply(word);
+        String singular = word;
+        if (rm.getCheck("_plural").check(word))
+        {
+            singular = rm.getSingleRuleByName("makeSingularEnglish").apply(word);
+        }
+
+        final String copyForLambda = singular;
 
         // Open the dictionary file
         try (Stream<String> ss = Files.lines(path_))
         {
             // Find the first match with the singular
-            Optional<String> line = ss.filter(s -> s.split(",")[0].equals(singular)).findFirst();
+            Optional<String> line = ss.filter(s -> s.split(",")[0].equals(copyForLambda)).findFirst();
 
             // If we find one, create a word from the csv
             if (line.isPresent()) { return Word.fromCsv(line.get(), word, rm); }

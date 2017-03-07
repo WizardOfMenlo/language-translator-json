@@ -69,7 +69,7 @@
       "appliesToNumber": ["SINGULAR", "PLURAL"],
       "appliesToGender": ["MALE", "FEMALE"],
       "applyToLanguage": "ORIGINAL",
-      "regexChecker": "[s]$"
+      "regexChecker": "(?!(is|his)\b)\b\\w+s$"
     },
 
     {
@@ -458,8 +458,22 @@
       "appliesToNumber": ["SINGULAR", "PLURAL"],
       "appliesToGender": ["MALE", "FEMALE"],
       "applyToLanguage": "TRANSLATED",
-      "regexChecker": "con"
+      "regexChecker": "con$"
+    },
+
+    {
+      "name": "isMi",
+      "appliesToType":
+      [
+        "POSSESSIVE", "PRONOUN"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "ORIGINAL",
+      "regexChecker": "me$"
     }
+
+
 
 
   ],
@@ -1214,9 +1228,94 @@
       ],
       "applyTo": "TRANSLATED",
       "rearrangements": [1, 0]
+    },
+
+    {
+      "name": "prepositionFollowedByTu",
+      "clause":
+      {
+        "checks":
+        [
+          ["preposition"],
+          ["isTu"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "tú$",
+          "replacement": "ti",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        }
+      ],
+      "applyTo": "TRANSLATED",
+      "rearrangements": [0, 1]
+    },
+
+    {
+      "name": "makeConmigo",
+      "clause":
+      {
+        "checks":
+        [
+          ["isCon"],
+          ["isMi"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": ".+",
+          "replacement": "conmigo",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": ".+",
+          "replacement": "",
+          "replacementGender": "INVALID",
+          "replacementNumber": "INVALID"
+        }
+      ],
+      "applyTo": "TRANSLATED",
+      "rearrangements": [0, 1]
+    },
+
+    {
+      "name": "makeContigo",
+      "clause":
+      {
+        "checks":
+        [
+          ["isCon"],
+          ["isTu"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": ".+",
+          "replacement": "contigo",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": ".+",
+          "replacement": "",
+          "replacementGender": "INVALID",
+          "replacementNumber": "INVALID"
+        }
+      ],
+      "applyTo": "TRANSLATED",
+      "rearrangements": [0, 1]
     }
-
-
 
   ],
 
@@ -1229,7 +1328,8 @@
       "makeFemaleSpanishDeterminateArticleSingular", "makeMaleSpanishDeterminateArticlePlural",
       "makeFemaleSpanishDeterminateArticlePlural", "makeFemaleSpanishIndeterminateArticle", "makePluralSpanishPossessive", "concordTu", "concordNosotros",
       "followsSoy", "followsEres", "followsEs", "followsSomos", "followsSon",
-      "pronounDropping", "pronounFollowedByVerbsEl", "pronounFollowedByVerbsElla",
+      "pronounDropping", "prepositionFollowedByTu", "makeConmigo", "makeContigo",
+      "pronounFollowedByVerbsEl", "pronounFollowedByVerbsElla",
       "pronounFollowedByVerbsTu", "pronounFollowedByVerbsYo", "negation"
     ]
 }
