@@ -46,8 +46,8 @@ public class Word
             case "conjunction":
                 gt = GrammaticalType.CONJUNCTION;
                 break;
-            case "proposition":
-                gt = GrammaticalType.PROPOSITION;
+            case "preposition":
+                gt = GrammaticalType.PREPOSITION;
                 break;
             case "negation":
                 gt = GrammaticalType.NEGATION;
