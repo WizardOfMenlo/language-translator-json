@@ -5,5 +5,6 @@ public enum  NumberReplacementType
 {
     SINGULAR,
     PLURAL,
-    UNCHANGED
+    UNCHANGED,
+    INVALID
 }

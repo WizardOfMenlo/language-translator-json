@@ -5,5 +5,6 @@ public enum GenderReplacementType
 {
     MALE,
     FEMALE,
-    UNCHANGED
+    UNCHANGED,
+    INVALID,
 }
