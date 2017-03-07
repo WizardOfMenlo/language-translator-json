@@ -53,8 +53,8 @@ public class Main
             Word[] words = Stream.of(arr).map(w -> dictionary.getWord(w, rm)).toArray(Word[]::new);
             // Apply all the rules
             Word[] finalRes = rm.applyAllRules(words);
-            for (Word w : finalRes) { System.out.print(w.getTranslated() + " "); }
-            System.out.println();
+
+            System.out.println(Formatter.format(finalRes));
         }
     }
 
