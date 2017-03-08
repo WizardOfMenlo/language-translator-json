@@ -69,7 +69,7 @@
       "appliesToNumber": ["SINGULAR", "PLURAL"],
       "appliesToGender": ["MALE", "FEMALE"],
       "applyToLanguage": "ORIGINAL",
-      "regexChecker": "(?!(is|his)\b)\b\\w+s$"
+      "regexChecker": "(?!(is|his))\\w+s$"
     },
 
     {
@@ -619,6 +619,35 @@
     },
 
     {
+      "name": "concordNumberReversed",
+      "clause":
+      {
+        "checks":
+        [
+          ["noun", "plural"],
+          ["adjective"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "PLURAL"
+        }
+      ],
+      "applyTo": "ORIGINAL",
+      "rearrangements": [0, 1]
+    },
+
+    {
       "name": "concordGender",
       "clause":
       {
@@ -640,6 +669,35 @@
           "regex": "",
           "replacement": "",
           "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        }
+      ],
+      "applyTo": "ORIGINAL",
+      "rearrangements": [0, 1]
+    },
+
+    {
+      "name": "concordGenderReversed",
+      "clause":
+      {
+        "checks":
+        [
+          ["noun", "female"],
+          ["adjective"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "FEMALE",
           "replacementNumber": "UNCHANGED"
         }
       ],
@@ -1323,7 +1381,7 @@
 
   "orderOfOperation":
     [
-      "concordGender", "concordNumber", "concordPossessiveNumber", "concordArticleGender", "concordArticleNumber",
+      "concordGender", "concordGenderReversed", "concordNumber", "concordNumberReversed", "concordPossessiveNumber", "concordArticleGender", "concordArticleNumber",
       "rearrangeAdjNoun", "makeFemaleSpanish", "makePluralSpanish",
       "makeFemaleSpanishDeterminateArticleSingular", "makeMaleSpanishDeterminateArticlePlural",
       "makeFemaleSpanishDeterminateArticlePlural", "makeFemaleSpanishIndeterminateArticle", "makePluralSpanishPossessive", "concordTu", "concordNosotros",
