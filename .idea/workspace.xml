@@ -28,8 +28,8 @@
       <file leaf-file-name="englishSpanish.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/englishSpanish.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="708">
-              <caret line="1552" column="62" selection-start-line="1552" selection-start-column="62" selection-end-line="1552" selection-end-column="62" />
+            <state relative-caret-position="726">
+              <caret line="1602" column="92" selection-start-line="1602" selection-start-column="92" selection-end-line="1602" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -48,8 +48,8 @@
       <file leaf-file-name="dictionary.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/dictionary.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="3" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="3" />
+            <state relative-caret-position="122">
+              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -894,11 +894,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488986445968</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fixed ellos&#10;">
+      <created>1488987307545</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1488987307545</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57399000" />
+    <option name="totallyTimeSpent" value="57901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
@@ -997,7 +1004,8 @@
     <MESSAGE value="Fixed a couple of pesky bugs&#10;" />
     <MESSAGE value="The force is with you&#10;&#10;" />
     <MESSAGE value="Fixed consonant plurals" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed consonant plurals" />
+    <MESSAGE value="Fixed ellos&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed ellos&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1408,16 +1416,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/dictionary.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="3" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="3" />
+        <state relative-caret-position="122">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/englishSpanish.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="1552" column="62" selection-start-line="1552" selection-start-column="62" selection-end-line="1552" selection-end-column="62" />
+        <state relative-caret-position="726">
+          <caret line="1602" column="92" selection-start-line="1602" selection-start-column="92" selection-end-line="1602" selection-end-column="92" />
           <folding />
         </state>
       </provider>
