@@ -117,6 +117,18 @@
     },
 
     {
+      "name": "noun-or-pronoun",
+      "appliesToType":
+      [
+        "NOUN"
+      ],
+      "appliesToNumber": [ "SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "."
+    },
+
+    {
       "name": "not-noun",
       "appliesToType":
       [
@@ -956,7 +968,7 @@
       {
         "checks":
         [
-          ["pronoun"],
+          ["noun-or-pronoun"],
           ["isEs"],
           ["verb-or-with"]
         ]
