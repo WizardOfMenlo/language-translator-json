@@ -113,6 +113,26 @@
     },
 
     {
+      "name": "any",
+      "appliesToType":
+      [
+        "ADJECTIVE",
+        "ARTICLE",
+        "NOUN",
+        "PRONOUN",
+        "VERB",
+        "POSSESSIVE",
+        "CONJUNCTION",
+        "PROPOSITION",
+        "NEGATION"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "ORIGINAL",
+      "regexChecker": "$"
+    },
+
+    {
       "name": "singular",
       "appliesToType":
       [
@@ -1452,6 +1472,35 @@
     },
 
     {
+      "name": "negationPostSwap",
+      "clause":
+      {
+        "checks":
+        [
+          ["any"],
+          ["negation"]
+        ]
+      },
+      "replacements":
+      [
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        },
+        {
+          "regex": "",
+          "replacement": "",
+          "replacementGender": "UNCHANGED",
+          "replacementNumber": "UNCHANGED"
+        }
+      ],
+      "applyTo": "TRANSLATED",
+      "rearrangements": [1, 0]
+    },
+
+    {
       "name": "prepositionFollowedByTu",
       "clause":
       {
@@ -1551,6 +1600,6 @@
       "followsSoy", "followsEres", "followsEs", "followsSomos", "followsSon",
       "pronounDropping", "prepositionFollowedByTu", "makeConmigo", "makeContigo",
       "pronounFollowedByVerbsEl", "pronounFollowedByVerbsEllos", "pronounFollowedByVerbsElla",
-      "pronounFollowedByVerbsTu", "pronounFollowedByVerbsYo", "negation"
+      "pronounFollowedByVerbsTu", "pronounFollowedByVerbsYo", "negation", "negationPostSwap"
     ]
 }
