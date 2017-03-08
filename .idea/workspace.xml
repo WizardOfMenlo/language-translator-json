@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="339828f3-b8dd-47be-83a5-c58c6f546ad9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/englishSpanish.json" afterPath="$PROJECT_DIR$/data/englishSpanish.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Check.java" afterPath="$PROJECT_DIR$/src/Check.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Clause.java" afterPath="$PROJECT_DIR$/src/Clause.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MultipleRule.java" afterPath="$PROJECT_DIR$/src/MultipleRule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RuleManager.java" afterPath="$PROJECT_DIR$/src/RuleManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SingleRule.java" afterPath="$PROJECT_DIR$/src/SingleRule.java" />
     </list>
     <ignored path="NewTranslator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="englishSpanish.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="englishSpanish.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/englishSpanish.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="1376" column="0" selection-start-line="1376" selection-start-column="0" selection-end-line="1376" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="1361" column="24" selection-start-line="1361" selection-start-column="24" selection-end-line="1361" selection-end-column="24" />
               <folding>
                 <element signature="e#10132#12756#0" expanded="false" />
               </folding>
@@ -40,8 +45,8 @@
       <file leaf-file-name="Dictionary.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dictionary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="28" column="35" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="342">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,8 +65,8 @@
       <file leaf-file-name="RuleManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RuleManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+            <state relative-caret-position="453">
+              <caret line="108" column="29" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -70,8 +75,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="759">
+              <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,8 +87,8 @@
       <file leaf-file-name="SingleRule.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SingleRule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="741">
+              <caret line="45" column="124" selection-start-line="45" selection-start-column="124" selection-end-line="45" selection-end-column="124" />
               <folding />
             </state>
           </provider>
@@ -92,8 +97,8 @@
       <file leaf-file-name="MultipleRule.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MultipleRule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="723">
+              <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -102,18 +107,21 @@
       <file leaf-file-name="Clause.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Clause.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="759">
+              <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+              <folding>
+                <element signature="e#1651#1652#0" expanded="true" />
+                <element signature="e#1709#1710#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Check.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Check.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Check.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+            <state relative-caret-position="741">
+              <caret line="65" column="106" selection-start-line="65" selection-start-column="106" selection-end-line="65" selection-end-column="106" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -124,7 +132,7 @@
       <file leaf-file-name="ReplacementRegex.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ReplacementRegex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
+            <state relative-caret-position="-69">
               <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -160,22 +168,22 @@
         <option value="$PROJECT_DIR$/src/MultipleChecks.java" />
         <option value="$PROJECT_DIR$/src/IValidable.java" />
         <option value="$PROJECT_DIR$/src/Tokenizer.java" />
-        <option value="$PROJECT_DIR$/src/Check.java" />
         <option value="$PROJECT_DIR$/src/ReplacementRegex.java" />
-        <option value="$PROJECT_DIR$/src/SingleRule.java" />
         <option value="$PROJECT_DIR$/src/LanguageType.java" />
         <option value="$PROJECT_DIR$/data/dictionary.csv" />
         <option value="$PROJECT_DIR$/src/GenderReplacementType.java" />
         <option value="$PROJECT_DIR$/src/NumberReplacementType.java" />
-        <option value="$PROJECT_DIR$/src/RuleManager.java" />
         <option value="$PROJECT_DIR$/src/GrammaticalType.java" />
         <option value="$PROJECT_DIR$/src/Word.java" />
         <option value="$PROJECT_DIR$/src/Dictionary.java" />
         <option value="$PROJECT_DIR$/src/Formatter.java" />
+        <option value="$PROJECT_DIR$/data/englishSpanish.json" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/RuleManager.java" />
+        <option value="$PROJECT_DIR$/src/Check.java" />
+        <option value="$PROJECT_DIR$/src/SingleRule.java" />
         <option value="$PROJECT_DIR$/src/MultipleRule.java" />
         <option value="$PROJECT_DIR$/src/Clause.java" />
-        <option value="$PROJECT_DIR$/data/englishSpanish.json" />
       </list>
     </option>
   </component>
@@ -858,11 +866,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488887883887</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fixed a couple of pesky bugs&#10;">
+      <created>1488983667655</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1488983667655</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53754000" />
+    <option name="totallyTimeSpent" value="55116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
@@ -958,7 +973,8 @@
     <MESSAGE value="Implemented Rule 5" />
     <MESSAGE value="Implemented Rule 6" />
     <MESSAGE value="Implemented Rule up to 9" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Rule up to 9" />
+    <MESSAGE value="Fixed a couple of pesky bugs&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed a couple of pesky bugs&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1271,28 +1287,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SingleRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Check.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/englishSpanish.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="1376" column="0" selection-start-line="1376" selection-start-column="0" selection-end-line="1376" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="1361" column="24" selection-start-line="1361" selection-start-column="24" selection-end-line="1361" selection-end-column="24" />
           <folding>
             <element signature="e#10132#12756#0" expanded="false" />
           </folding>
@@ -1322,35 +1320,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ReplacementRegex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Formatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="759">
+          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1359,25 +1340,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RuleManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+        <state relative-caret-position="453">
+          <caret line="108" column="29" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SingleRule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="45" column="124" selection-start-line="45" selection-start-column="124" selection-end-line="45" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ReplacementRegex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69">
+          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MultipleRule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="723">
+          <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Clause.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="759">
+          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+          <folding>
+            <element signature="e#1651#1652#0" expanded="true" />
+            <element signature="e#1709#1710#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dictionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Check.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="65" column="106" selection-start-line="65" selection-start-column="106" selection-end-line="65" selection-end-column="106" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

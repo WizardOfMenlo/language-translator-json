@@ -63,6 +63,6 @@ public class Check implements IValidable
     @Override
     public boolean valid()
     {
-        return !name.equals("") && appliesToType.length > 0 && appliesToGender.length > 0 && appliesToNumber.length > 0;
+        return name != null && appliesToType != null && appliesToGender != null && appliesToNumber != null && !name.equals("") && appliesToType.length > 0 && appliesToGender.length > 0 && appliesToNumber.length > 0;
     }
 }

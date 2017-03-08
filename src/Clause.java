@@ -66,6 +66,6 @@ public class Clause implements IValidable
     @Override
     public boolean valid()
     {
-        return checks.length > 0;
+        return checks != null && checks.length > 0;
     }
 }

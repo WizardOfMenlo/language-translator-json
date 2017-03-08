@@ -106,12 +106,12 @@ public class RuleManager implements IValidable
     {
         for (Check c : checks)
         {
-            if (!c.valid()) return false;
+            if (c == null && !c.valid()) return false;
         }
 
         for (SingleRule r : srules)
         {
-            if (!r.valid()) return false;
+            if (r == null && !r.valid()) return false;
         }
 
         for (MultipleRule m : mrules)
