@@ -43,6 +43,6 @@ public class SingleRule implements IValidable
     @Override
     public boolean valid()
     {
-        return !name.trim().equals("") && checks.length > 0 && replacementRegex.valid();
+        return name != null && !name.trim().equals("") && checks != null && checks.length > 0 && replacementRegex != null && replacementRegex.valid();
     }
 }

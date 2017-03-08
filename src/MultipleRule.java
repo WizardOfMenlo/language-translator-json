@@ -70,7 +70,11 @@ public class MultipleRule implements IValidable
             }
         }
 
-        return clause.valid() &&
+        return  clause != null &&
+                name != null &&
+                replacements != null &&
+                rearrangements != null &&
+                clause.valid() &&
                 !name.trim().equals("") &&
                 replacements.length > 0 &&
                 replacements.length == rearrangements.length
