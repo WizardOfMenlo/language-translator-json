@@ -28,8 +28,8 @@
       <file leaf-file-name="englishSpanish.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/englishSpanish.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="970" column="20" selection-start-line="970" selection-start-column="20" selection-end-line="970" selection-end-column="20" />
+            <state relative-caret-position="305">
+              <caret line="1449" column="100" selection-start-line="1449" selection-start-column="100" selection-end-line="1449" selection-end-column="100" />
               <folding />
             </state>
           </provider>
@@ -100,7 +100,7 @@
       <file leaf-file-name="Clause.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Clause.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="759">
+            <state relative-caret-position="1170">
               <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
               <folding>
                 <element signature="e#1651#1652#0" expanded="true" />
@@ -113,7 +113,7 @@
       <file leaf-file-name="Check.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Check.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="849">
+            <state relative-caret-position="741">
               <caret line="65" column="106" selection-start-line="65" selection-start-column="106" selection-end-line="65" selection-end-column="106" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -880,11 +880,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488985245411</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="The force is with you&#10;&#10;">
+      <created>1488985613706</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1488985613706</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55690000" />
+    <option name="totallyTimeSpent" value="56535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
@@ -981,7 +988,8 @@
     <MESSAGE value="Implemented Rule 6" />
     <MESSAGE value="Implemented Rule up to 9" />
     <MESSAGE value="Fixed a couple of pesky bugs&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed a couple of pesky bugs&#10;" />
+    <MESSAGE value="The force is with you&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="The force is with you&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1335,14 +1343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MultipleRule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Dictionary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -1377,9 +1377,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Check.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="65" column="106" selection-start-line="65" selection-start-column="106" selection-end-line="65" selection-end-column="106" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MultipleRule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Clause.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
+        <state relative-caret-position="1170">
           <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
           <folding>
             <element signature="e#1651#1652#0" expanded="true" />
@@ -1388,20 +1406,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Check.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="849">
-          <caret line="65" column="106" selection-start-line="65" selection-start-column="106" selection-end-line="65" selection-end-column="106" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/englishSpanish.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="970" column="20" selection-start-line="970" selection-start-column="20" selection-end-line="970" selection-end-column="20" />
+        <state relative-caret-position="305">
+          <caret line="1449" column="100" selection-start-line="1449" selection-start-column="100" selection-end-line="1449" selection-end-column="100" />
           <folding />
         </state>
       </provider>

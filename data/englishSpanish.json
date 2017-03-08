@@ -23,6 +23,46 @@
     },
 
     {
+      "name": "_ends-in-consonant",
+      "appliesToType":
+      [
+        "ADJECTIVE",
+        "ARTICLE",
+        "NOUN",
+        "PRONOUN",
+        "VERB",
+        "POSSESSIVE",
+        "CONJUNCTION",
+        "PROPOSITION",
+        "NEGATION"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "[qwrtypsdfghjklzxcvbnm]$"
+    },
+
+    {
+      "name": "_ends-in-vowel",
+      "appliesToType":
+      [
+        "ADJECTIVE",
+        "ARTICLE",
+        "NOUN",
+        "PRONOUN",
+        "VERB",
+        "POSSESSIVE",
+        "CONJUNCTION",
+        "PROPOSITION",
+        "NEGATION"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],
+      "appliesToGender": ["MALE", "FEMALE"],
+      "applyToLanguage": "TRANSLATED",
+      "regexChecker": "[aeiou]$"
+    },
+
+    {
       "name": "male",
       "appliesToType":
       [
@@ -506,8 +546,21 @@
     },
 
     {
-      "name": "makePluralSpanish",
-      "checks": ["plural", "not-article", "not-possessive"],
+      "name": "makePluralSpanishConsonant",
+      "checks": ["_ends-in-consonant", "plural"  ,"not-article", "not-possessive"],
+      "replacementRegex":
+      {
+        "regex": "$",
+        "replacement": "es",
+        "replacementGender": "UNCHANGED",
+        "replacementNumber": "UNCHANGED"
+      },
+      "applyTo": "TRANSLATED"
+    },
+
+    {
+      "name": "makePluralSpanishVowel",
+      "checks": ["_ends-in-vowel", "plural"  ,"not-article", "not-possessive"],
       "replacementRegex":
       {
         "regex": "$",
@@ -1394,7 +1447,7 @@
   "orderOfOperation":
     [
       "concordGender", "concordGenderReversed", "concordNumber", "concordNumberReversed", "concordPossessiveNumber", "concordArticleGender", "concordArticleNumber",
-      "rearrangeAdjNoun", "makeFemaleSpanish", "makePluralSpanish",
+      "rearrangeAdjNoun", "makeFemaleSpanish", "makePluralSpanishConsonant", "makePluralSpanishVowel",
       "makeFemaleSpanishDeterminateArticleSingular", "makeMaleSpanishDeterminateArticlePlural",
       "makeFemaleSpanishDeterminateArticlePlural", "makeFemaleSpanishIndeterminateArticle", "makePluralSpanishPossessive", "concordTu", "concordNosotros",
       "followsSoy", "followsEres", "followsEs", "followsSomos", "followsSon",
