@@ -511,7 +511,7 @@
       "checks": ["female", "not-noun", "not-article", "not-possessive"],
       "replacementRegex":
       {
-        "regex": ".$",
+        "regex": "o$",
         "replacement": "a",
         "replacementGender": "UNCHANGED",
         "replacementNumber": "UNCHANGED"
