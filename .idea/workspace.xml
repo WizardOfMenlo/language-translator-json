@@ -28,8 +28,8 @@
       <file leaf-file-name="englishSpanish.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/englishSpanish.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="1449" column="100" selection-start-line="1449" selection-start-column="100" selection-end-line="1449" selection-end-column="100" />
+            <state relative-caret-position="708">
+              <caret line="1552" column="62" selection-start-line="1552" selection-start-column="62" selection-end-line="1552" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -48,8 +48,8 @@
       <file leaf-file-name="dictionary.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/dictionary.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+            <state relative-caret-position="216">
+              <caret line="12" column="3" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -887,11 +887,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488985613706</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixed consonant plurals">
+      <created>1488986445968</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1488986445968</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56535000" />
+    <option name="totallyTimeSpent" value="57399000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
@@ -989,7 +996,8 @@
     <MESSAGE value="Implemented Rule up to 9" />
     <MESSAGE value="Fixed a couple of pesky bugs&#10;" />
     <MESSAGE value="The force is with you&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="The force is with you&#10;&#10;" />
+    <MESSAGE value="Fixed consonant plurals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed consonant plurals" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1361,14 +1369,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/dictionary.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/RuleManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
@@ -1406,10 +1406,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/dictionary.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data/englishSpanish.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="1449" column="100" selection-start-line="1449" selection-start-column="100" selection-end-line="1449" selection-end-column="100" />
+        <state relative-caret-position="708">
+          <caret line="1552" column="62" selection-start-line="1552" selection-start-column="62" selection-end-line="1552" selection-end-column="62" />
           <folding />
         </state>
       </provider>
