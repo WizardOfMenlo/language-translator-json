@@ -1,0 +1,127 @@
+How to write your own translation rules:
+
+1) checks;
+checks are used to give context to a rule, they are applied to ensure a given word has the correct characteristics before a rule is applied
+
+eg:
+ {
+      "name": "genericCheck",   //how you refer to the check from the rule
+      "appliesToType":     //a list of all the grammatical types this rule will be applied to
+      [
+        "ADJECTIVE",
+        "ARTICLE",
+        "NOUN",
+        "PRONOUN",
+        "VERB",
+        "POSSESSIVE",
+        "CONJUNCTION",
+        "PROPOSITION",
+        "NEGATION"
+      ],
+      "appliesToNumber": ["SINGULAR", "PLURAL"],  //a list of all the number types this rule can be applied to
+      "appliesToGender": ["MALE", "FEMALE"],      // a list of all the gender types this rule can be applied to
+      "applyToLanguage": "TRANSLATED",            //which language you want the rule applied to
+      "regexChecker": "regex"                     //what does the word need to fulfill to need this applied to it
+    },
+
+2)srules
+rules applied to single words, they rely on the checks above and augment a single word
+
+eg:
+{
+      "name": "genericSRule",        //the name you want to refer to the rule by
+      "checks": ["genericCheck"],    //what checks need to be done on the word
+      "replacementRegex":
+      {
+        "regex": "regex",                //what part of the word do you want to be changed
+        "replacement": "replacement",    //what do you want it to be replaced with
+        "replacementGender": "UNCHANGED", //do i need to set the gender to be different 
+        "replacementNumber": "SINGULAR"   //has the number type changed after this operation
+      },
+      "applyTo": "ORIGINAL"              //which language is this rule being applied to
+    },
+
+
+3)mrules
+these are rules which need to be applied to a clause, these tend to be rearrangements but can do anything to multiple words
+
+eg:
+{
+    "name": "genericMRule",            //how do you want to refer to this rule
+    "clause":                          //tells the program this operation is done on a clause
+      {
+        "checks":                      //what checks are being done for this rule
+        [
+          ["adjective"],               //this checks if the clause contains an adjective
+          ["noun", "plural"]           // this finds the closest noun which is also plural
+        ]
+      },
+    "replacements":
+    [
+      {
+        "regex": "",
+        "replacement": "",
+        "replacementGender": "UNCHANGED",      //the rules applied to the first word, the adjective
+        "replacementNumber": "PLURAL"
+      },
+      {
+        "regex": "",
+        "replacement": "",
+        "replacementGender": "UNCHANGED",      //the rule applied to the second word, the plural noun
+        "replacementNumber": "UNCHANGED"       //there is no limit to the number of words which a rule can be applied to
+      }
+    ],
+    "applyTo": "ORIGINAL",                 //which language is this rule being applied to
+    "rearrangements": [0, 1]               //what order should the words be given back in
+    },
+
+
+4)orderOfOperation
+what order are the rules to be applied in, this can often be important to ensure a good translation
+
+eg:       //some of the rules from spanish in the order they are applied
+ "orderOfOperation":
+    [
+      "concordGender", "concordNumber", "concordPossessiveNumber", "concordArticleGender", "concordArticleNumber", "rearrangeAdjNoun"
+    ]
+
+Syntax Details.
+To write well formed RuleManager JSON object it is fundamental to adhere to the following format. If the following conditions are not met the program will exit without even attempting
+to translate the input:
+
+The RuleManager will be valid if and only if all the associated Check, SingleRule and MultipleRule objects are not null and valid.
+
+A Check object will be valid if and only if the name property is not an empty string or null, and the three arrays appliesToType, 
+appliesToGender and appliesToNumber are not null and of non-zero length.
+
+A SingleRule object will be valid if the name is not null and not the empty string, checks is not null and of nonzero lenght, and the associated replacement regex is not null and valid
+
+A Replacement regex is valid if Pattern.compile(regex) does not throw a PatternSyntaxException
+
+A MultipleRule is valid if:
+	the clause is not null and valid
+	the name is not null and not the empty string
+	the replacement array contains only non null valid ReplacementRegex
+	rearrangements is non null
+	replacements.length == rearrangements.length == clause.getSize()
+
+A Clause is valid if checks is non null and of non zero size
+
+Implementation Details:
+Checks:
+	For a given w and a check c, c.check(w) will return true if:
+
+		w.getType() is one of the types in c.appliesToType
+		w.getGender() is one of the types in c.appliesToGender
+		w.getNumber() is one of the types in c.appliesToNumber
+		c.regexChecker matches either c.getOriginal() or c.getTranslated(), depending on c.applyToLanguage
+
+Clauses:
+	For a given arr = Word[] { w1, w2, ... wn } and a clause C, C.getMatches(arr, gRuleManager) will return the first match of m1, m2, m3, ... such that
+		for any i, j s.t. 0 < i = j - 1 < n mi will match all the Checks in the i-th row of c.checks and mj is the first word after mi which matches the j-th row of checks
+
+SingleRule will apply the given regex and change the gender or number of the matched word
+MultipleRule will apply the given regexes in order to each match in the clause, and rearrange them according to the zero indexed array rearrangements
+		
+
+
